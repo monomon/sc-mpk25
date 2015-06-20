@@ -1,0 +1,9 @@
+* subclass mpkControl for keyboard and drumpads
+	* events and handlers are different
+	* mapping is a property - how to invoke functions with a different scope?
+* make drumpad handlers
+* use buffers for drum samples (if you use them)
+* open source MPK handler
+	* generalize further
+	* document better
+	* give examples
