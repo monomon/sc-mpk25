@@ -8,7 +8,8 @@ SynthDef(\bassdrum, {
 			0.1*velocity+0.1,
 			LinLin.kr(velocity,0,0.8,0.05,0.5)
 		),
-		1,0.34,
+		velocity > 0,
+		0.34,
 		doneAction:2
 	);
 
@@ -24,7 +25,7 @@ SynthDef(\snare1, {
 			0.01,0.2*velocity+0.1,
 			LinLin.kr(velocity,0,0.8,0.05,0.8)
 		),
-		1,
+		velocity > 0,
 		doneAction:2);
 	var sound = Resonz.ar(
 		Mix.ar([
@@ -48,8 +49,10 @@ SynthDef(\snare2, {
 			0.01,0.2*velocity+0.1,
 			LinLin.kr(velocity,0,0.5,0.1,1)
 		),
-		1,0.5,
-		doneAction:2);
+		velocity > 0,
+		0.5,
+		doneAction:2
+	);
 	var sound = Resonz.ar(
 		SinOsc.ar(410,0,0.4*env) + BrownNoise.ar(env*0.5),
 		530,2
@@ -67,7 +70,7 @@ SynthDef(\clap, {
 			0.2*velocity+0.1,
 			LinLin.kr(velocity, 0,0.8,0.1,0.9)
 		),
-		1,
+		velocity > 0,
 		doneAction:2
 	);
 
@@ -90,7 +93,8 @@ SynthDef(\hat1, {
 			0.5*velocity + 0.1,
 			LinLin.kr(velocity,0,0.8,0.1,0.7)
 		),
-		1,0.6,
+		velocity > 0,
+		0.6,
 		doneAction:2
 	);
 
@@ -114,7 +118,8 @@ SynthDef(\hat2, {
 			0.8*velocity + 0.1,
 			LinLin.kr(velocity,0,0.8,0.1,0.8)
 		),
-		1,0.6,
+		velocity > 0,
+		0.6,
 		doneAction:2
 	);
 

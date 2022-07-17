@@ -10,7 +10,9 @@
 
 ~mpk = MPK.new(
 	~fxBus,
+	// synth for the keyboard
 	\massiveBass,
+	// mappings from note to synth for drumpads
 	Dictionary[
 				36 -> \bassdrum,
 				37 -> \snare1,
@@ -24,9 +26,11 @@
 ~mpk.keyboard.midiport.postln;
 ~mpk.drumpads.handlers.postln;
 )
+
 (
-~mpk.keyboard.synthdefs_(\weird);
+~mpk.keyboard.synthdefs = \weird;
 )
+
 (
 ~mpk.clean;
 )

@@ -102,10 +102,16 @@ SynthDef(\bar, {
 SynthDef(\weird, {
 	arg freq, velocity, inBus, outBus=0;
 
-	var sound = Dust.ar(freq, velocity);
+	var env = EnvGen.kr(Env.adsr(0.01,0.3,0.7,1.5,velocity),doneAction:2);
+
+	var sound = Resonz.ar(
+		Logistic.ar(SinOsc.kr(velocity*1,0,4.0,0.05), 1000, 0.5, env),
+		freq,
+		1.3,
+		env
+	);
 
 	Out.ar(outBus, sound!2);
 }).add;
 
 )
-

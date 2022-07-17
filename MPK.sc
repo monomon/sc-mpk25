@@ -11,7 +11,7 @@ MPKControl {
 	<synthGroup,
 	// for the generic control this argument
 	// is a single name (string or symbol) of a synthDef
-	<>bsynthdefs,
+	<>synthdefs,
 	// output bus
 	<outBus;
 
@@ -32,7 +32,6 @@ MPKControl {
 
 		synthdefs = aSynthDefs;
 
-		synthdefs.debug;
 		// synths is a dictionary per note
 		synths = Dictionary.new;
 		// add synths to group for easier cleaning
@@ -93,8 +92,7 @@ MPKControl {
 				arg val, num, chan;
 
 				// free up synth at this note
-				synths[num].set(\velocity, val);
-				synths.debug;
+				synths[num].set(\velocity, 0);
 			},
 			\bend -> {
 				arg val, chan;
@@ -150,6 +148,8 @@ MPKDrumpads : MPKControl {
 				arg val, num, chan;
 
 				// do nothing on noteoff
+				// TODO could force synth to release here,
+				// depending on configuration?
 			},
 			\bend -> {
 				arg val, chan;
