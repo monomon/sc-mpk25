@@ -1,3 +1,6 @@
+/*
+ * Interactive usage for mpk
+ */
 Platform.userExtensionDir;
 s.queryAllNodes;
 MIDIClient.init;

@@ -1,3 +1,6 @@
+/*
+ * Interactive usage of mpk class
+ */
 (
 ~fxBus = Bus.audio(s,2);
 ~drumFx = Synth.new(
